@@ -1,0 +1,31 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "browser": true
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "comma-dangle": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "semi": [
+      2,
+      "never"
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
