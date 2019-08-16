@@ -10,7 +10,7 @@ const validationSchema = Yup.object().shape({
         .email('Email is invalid')
         .required('Email is required'),
     password: Yup.string()
-        .min(4, 'Password must be at least 4 characters')
+        .min(8, 'Password must be at least 4 characters')
         .matches(/(?=.*\d)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, 'Password must contain at least one number and one capital letter')
         .required('Password is required'),
     confirmPassword: Yup.string()

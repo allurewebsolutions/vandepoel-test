@@ -26,14 +26,18 @@ const validationSchema = Yup.object().shape({
     enjoyIds: Yup.array()
         .required('You must select one'),
     cannot: Yup.boolean(),
-    startReading: Yup.mixed()
+    startReading: Yup.date()
         .when("cannot", {
             is: true,
             then: Yup.date().notRequired(),
             otherwise: Yup.date().required('You must enter a date')
         }),
-    finishReading: Yup.date()
-        .required('You must enter a date'),
+    finishReading:  Yup.date()
+        .when("cannot", {
+            is: true,
+            then: Yup.date().notRequired(),
+            otherwise: Yup.date().required('You must enter a date')
+        }),
     describe: Yup.string()
         .required('This field is required')
         .min(256)
